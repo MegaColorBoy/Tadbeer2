@@ -5,26 +5,25 @@ package com.heba.tadbeer.classes;
  */
 public class RequestToken {
     private String token;
-    private long expires;
+    private boolean authorized;
 
-    public RequestToken(String token, long expires) {
-        this.token = token;
-        this.expires = expires;
+    public RequestToken(String token, boolean authorized) {
+         this.authorized = authorized;
     }
 
     public String getToken() {
         return token;
     }
 
-    public long getExpires() {
-        return expires;
-    }
-
     public void setToken(String token) {
         this.token = token;
     }
 
-    public void setExpires(long expires) {
-        this.expires = expires;
+    public boolean isAuthorized() {
+        return authorized;
+    }
+
+    public void setAuthorized(boolean authorized) {
+        this.authorized = authorized;
     }
 }
