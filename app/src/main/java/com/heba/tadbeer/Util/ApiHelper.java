@@ -17,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 
 public class ApiHelper {
@@ -81,7 +82,7 @@ public class ApiHelper {
      * @param password  user password
      * @param  callback ApiCallback.
      */
-    public void register(String email, String password, ApiCallback callback){
+    public void register(String email, String password, String firstname, String lastname, ApiCallback callback){
         JSONObject postData = new JSONObject();
 
         //create postdata
@@ -90,6 +91,8 @@ public class ApiHelper {
             postData.put("action","register");
             postData.put("email", email);
             postData.put("password", password);
+            postData.put("firstname", firstname);
+            postData.put("lastname", lastname);
             sendRequest(postData, callback);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -113,6 +116,7 @@ public class ApiHelper {
             postData.put("email", email);
             postData.put("cardNumber", cardNumber);
             postData.put("retailerId", retailerId);
+            Log.d("TBR pdata", postData.toString());
             sendRequest(postData, callback);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -298,8 +302,8 @@ public class ApiHelper {
      */
     public void sendRequest(JSONObject requestData, final ApiCallback callback){
         try {
-            if(requestToken!=null){
-                requestData.put("token", requestToken.getToken());
+            if(this.requestToken!=null){
+                requestData.put("token", this.requestToken.getToken());
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -311,20 +315,23 @@ public class ApiHelper {
         while( keys.hasNext() ) {
             String key = (String)keys.next();
             try {
-                url += key + "=" + (String)requestData.get(key) +"&";
+                Object value = requestData.get(key);
+                url += key + "=" + value +"&";
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
+        Log.d("TBR", url);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest(url, requestData,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        Log.d("TBR", response.toString());
                         try {
                             //upsdate Request Token
                             //create Request Token
                             if(!response.isNull("token")){
-                                requestToken = new RequestToken(response.getString("token"), response.getInt("expires"));
+                                setRequestToken(response.getString("token"), response.getBoolean("authorized"));
                             }
 
 
@@ -335,6 +342,7 @@ public class ApiHelper {
                                 callback.onError(false, response.getString("error"));
                             }
                         } catch (JSONException e) {
+                            Log.d("TBR", e.getMessage());
                             callback.onError(false, "error accessing server");
                         }
                     }
@@ -358,5 +366,8 @@ public class ApiHelper {
             }
         };
         mRequestQueue.add(jsObjRequest);
+    }
+    private void setRequestToken(String token, boolean expires){
+        this.requestToken = new RequestToken(token, expires);
     }
 }
