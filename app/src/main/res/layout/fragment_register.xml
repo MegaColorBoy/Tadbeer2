@@ -10,9 +10,9 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/text_view_signup_email"
-        android:layout_above="@+id/text_view_signup_password"
-        android:layout_alignStart="@+id/text_view_signup_password"
+        android:id="@+id/edit_text_signup_email"
+        android:layout_above="@+id/edit_text_signup_password"
+        android:layout_alignStart="@+id/edit_text_signup_password"
         android:hint="@string/email"
         android:textAlignment="center" />
 
@@ -21,10 +21,10 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/text_view_signup_password"
+        android:id="@+id/edit_text_signup_password"
         android:hint="@string/password"
-        android:layout_above="@+id/text_view_signup_confirm_password"
-        android:layout_alignStart="@+id/text_view_signup_confirm_password"
+        android:layout_above="@+id/edit_text_signup_confirm_password"
+        android:layout_alignStart="@+id/edit_text_signup_confirm_password"
         android:textAlignment="center" />
 
     <EditText
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/text_view_signup_confirm_password"
+        android:id="@+id/edit_text_signup_confirm_password"
         android:hint="@string/confirm_password"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
@@ -43,8 +43,10 @@
         android:layout_height="wrap_content"
         android:text="@string/signup"
         android:id="@+id/button_signup"
-        android:layout_below="@+id/text_view_signup_confirm_password"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/edit_text_signup_lastname"
+        android:layout_centerHorizontal="true"
+        android:onClick="register"
+        android:nestedScrollingEnabled="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,7 +78,27 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/text_view_signup_error"
-        android:layout_above="@+id/text_view_signup_email"
+        android:layout_above="@+id/edit_text_signup_email"
         android:layout_centerHorizontal="true"
         android:textColor="#ff0000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_signup_firstnmame"
+        android:layout_below="@+id/edit_text_signup_confirm_password"
+        android:layout_alignStart="@+id/edit_text_signup_confirm_password"
+        android:layout_alignEnd="@+id/edit_text_signup_confirm_password"
+        android:hint="@string/firstname"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_signup_lastname"
+        android:layout_below="@+id/edit_text_signup_firstnmame"
+        android:layout_alignEnd="@+id/edit_text_signup_firstnmame"
+        android:layout_alignStart="@+id/edit_text_signup_firstnmame"
+        android:textAlignment="center"
+        android:hint="@string/lastname" />
 </RelativeLayout>
