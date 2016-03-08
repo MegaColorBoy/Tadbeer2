@@ -2,8 +2,6 @@ package com.heba.tadbeer;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,8 +13,6 @@ import com.heba.tadbeer.Util.ApiCallback;
 import com.heba.tadbeer.Util.ApiHelper;
 import com.heba.tadbeer.Util.Tbr;
 import com.heba.tadbeer.classes.User;
-
-import junit.framework.TestCase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -74,10 +70,11 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     public void register (View view){
-
-        String email = ((EditText)findViewById(R.id.text_view_email)).getText().toString();
-        String password = ((EditText)findViewById(R.id.text_view_signup_password)).getText().toString();
-        String pwconfirm = ((EditText)findViewById(R.id.text_view_signup_confirm_password)).getText().toString();
+        String email = ((EditText)findViewById(R.id.edit_text_signup_email)).getText().toString();
+        String password = ((EditText)findViewById(R.id.edit_text_signup_password)).getText().toString();
+        String pwconfirm = ((EditText)findViewById(R.id.edit_text_signup_confirm_password)).getText().toString();
+        String firstname = ((EditText)findViewById(R.id.edit_text_signup_firstnmame)).getText().toString();
+        String lastname = ((EditText)findViewById(R.id.edit_text_signup_lastname)).getText().toString();
 
         //check submission
         boolean valid = true;
@@ -90,12 +87,20 @@ public class LoginActivity extends AppCompatActivity {
             valid = false;
             error = getString(R.string.error_password_format);
         }
+        else if(firstname == null || firstname.length() < 1){
+            valid = false;
+            error = getString(R.string.error_firstname);
+        }
+        else if(lastname == null || lastname.length() < 1){
+            valid = false;
+            error = getString(R.string.error_lastname);
+        }
 
         ((TextView)findViewById(R.id.text_view_signup_error)).setText(error);
 
         if(valid){
             apiHelper = ((Tbr)this.getApplication()).getApiHelper();
-            apiHelper.register(email, password, new ApiCallback() {
+            apiHelper.register(email, password, firstname, lastname, new ApiCallback() {
                 @Override
                 public void onSuccess(Boolean success, JSONObject data) {
                     Intent in = new Intent(getApplicationContext(), HomeActivity.class);
