@@ -56,6 +56,7 @@ public class CardsActivityFragment extends Fragment implements View.OnClickListe
         builder.setMessage("Enter card details");
         final EditText cardNumField = new EditText(getActivity());
         cardNumField.setHint("Card number");
+
         final EditText retailIDField = new EditText(getActivity());
         retailIDField.setHint("Retail ID");
         final EditText emailIDField = new EditText(getActivity());

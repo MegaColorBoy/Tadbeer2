@@ -8,8 +8,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import com.heba.tadbeer.Util.ApiCallback;
+import com.heba.tadbeer.Util.ApiHelper;
+import com.heba.tadbeer.Util.Tbr;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Iterator;
+
 public class HomeActivity extends AppCompatActivity {
 
+    ApiHelper apiHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +28,12 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        udpatePrimaryDataSets();
     }
 
     public void goto_page(View view){
@@ -37,5 +54,31 @@ public class HomeActivity extends AppCompatActivity {
         if(in != null){
             startActivity(in);
         }
+    }
+
+    private void udpatePrimaryDataSets(){
+        apiHelper = (apiHelper == null) ? apiHelper = ((Tbr)getApplication()).getApiHelper() : apiHelper;
+        apiHelper.getRetailerList(new ApiCallback() {
+            @Override
+            public void onSuccess(Boolean success, JSONObject data) {
+                try {
+                    JSONArray retailers = data.getJSONArray("Retailer");
+
+                    for (int i=0; i < retailers.length(); i++) {
+                        JSONObject retailer = retailers.getJSONObject(i);
+                        //TODO add to database
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onError(Boolean success, String error) {
+
+            }
+        });
     }
 }

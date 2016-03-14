@@ -1,2 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.2.0_3e9d136a22b3d0b2172e3a0b9f33645e9e51cb6d.jar" />
+    </item>
+    <item
+        jar="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.2.0_f0f8629149f5c32868e0db333a1d2b981f5a4c4b.jar" />
+    </item>
+    <item
+        jar="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d4c936aa8c7d2522c82e3f1829c791d9e367f009">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.2.0_0fa03366223ba55d7adb6bf00dc3e8f5a41c6bf4.jar" />
+    </item>
+    <item
+        jar="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.0_25cbfc3bf290b4fcac859f9efe86cb07f305691c.jar" />
+    </item>
+    <item
+        jar="/home/bello/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.0/support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.0_a5252c53e8a82b97b84dad83593fce4d2ec15b97.jar" />
+    </item>
+    <item
+        jar="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/libs/internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.0_629c892e2d273e3b6ea706823ac0c9f5c884b1a8.jar" />
+    </item>
+    <item
+        jar="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/com.mcxiaoke.volley-library-aar-1.0.0_ed5acac3a79c0bd15ccd56dd4a0231a3d44920f8.jar" />
+    </item>
+    <item
+        jar="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/exploded-aar/com.android.support/design/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1aa5b025efe97f5006f5be16d6ca67c6c3c0c0d8">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.2.0_14e646e0652fda54f55bfd1dddcb157afeeee552.jar" />
+    </item>
+    <item
+        jar="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="/home/bello/AndroidStudioProjects/tadbeer2/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.2.0_bc700dde607592c4c642dc1bc9464d8db2b5abf8.jar" />
+    </item>
+
+</items>

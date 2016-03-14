@@ -15,9 +15,7 @@ import com.heba.tadbeer.R;
 import com.heba.tadbeer.classes.RequestToken;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.Iterator;
-import java.util.Objects;
 
 
 public class ApiHelper {
@@ -321,12 +319,11 @@ public class ApiHelper {
                 e.printStackTrace();
             }
         }
-        Log.d("TBR", url);
+
         JsonObjectRequest jsObjRequest = new JsonObjectRequest(url, requestData,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d("TBR", response.toString());
                         try {
                             //upsdate Request Token
                             //create Request Token
@@ -366,6 +363,21 @@ public class ApiHelper {
             }
         };
         mRequestQueue.add(jsObjRequest);
+    }
+
+    /**
+     * Get User Data Bundle
+     * @param callback
+     */
+    public void getUserData(ApiCallback callback){
+        String url = server + "?scope=user&action=data";
+        JSONObject requestData = new JSONObject();
+        sendRequest(requestData, callback);
+    }
+    public void getRetailerList(ApiCallback callback){
+        String url = server + "?scope=data&action=list_retailers";
+        JSONObject requestData = new JSONObject();
+        sendRequest(requestData, callback);
     }
     private void setRequestToken(String token, boolean expires){
         this.requestToken = new RequestToken(token, expires);

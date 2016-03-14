@@ -22,4 +22,9 @@
     <string name="title_activity_warrantis">WarrantisActivity</string>
     <string name="title_activity_cards">CardsActivity</string>
     <string name="title_activity_warranties">WarrantiesActivity</string>
+    <string name="firstname">firstname</string>
+    <string name="lastname">lastname</string>
+    <string name="error_firstname">Please enter your first name</string>
+    <string name="error_lastname">Please enter your last name</string>
+    <string name="card_number">Card Number</string>
 </resources>
